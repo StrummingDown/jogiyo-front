@@ -1,6 +1,4 @@
-import axios from "axios";
-import { useNavigate } from "react-router-dom";
-import React, { useEffect } from "react";
+import React from "react";
 import styled from "styled-components";
 
 const LogoForm = styled.div`
@@ -9,7 +7,6 @@ const LogoForm = styled.div`
   align-items: center;
   justify-content: center;
 `;
-
 
 const Logo = styled.img`
   max-width: 400px;
@@ -68,42 +65,15 @@ const Button = styled.a`
   }
 `;
 
- 
 const Login = () => {
-  const navigate = useNavigate();
-  const kakao = async () => {
-    const url = new URL(window.location.href);
-    const code = url.searchParams.get("code");
-    console.log('카카오코드읽기성공',code)
-    const {data:{id,nickname}} = await axios.post(`http://localhost:4000/kakao`,{
-      code
-    })
-    console.log('id확인',id)
-    navigate('/home')
-    if(id){
-       navigate('/home')
-    } 
-    
-    
-  };
-
-  
-  useEffect(() => {
-    console.log('useEffect작종')
-    kakao();
-  },);
-
-
-
-
   return (
     <div>
       <LogoForm>
-        <Logo src="https://play-lh.googleusercontent.com/Lwf7wsenpoSoKi49pPDGm01H8UY-NvznoM99DzzrmCDn1QIS-klLRqIw4GeFV6lbz1g"></Logo>
+        <Logo src='https://play-lh.googleusercontent.com/Lwf7wsenpoSoKi49pPDGm01H8UY-NvznoM99DzzrmCDn1QIS-klLRqIw4GeFV6lbz1g'></Logo>
       </LogoForm>
       <ButtonForm>
         <Container>
-          <Button href="https://kauth.kakao.com/oauth/authorize?client_id=b72151a6abcb9e45c5b06010dc2a3f52&redirect_uri=http://localhost:3000&response_type=code">
+          <Button href='https://kauth.kakao.com/oauth/authorize?client_id=b72151a6abcb9e45c5b06010dc2a3f52&redirect_uri=http://localhost:3000&response_type=code'>
             카카오 로그인
           </Button>
           <Button>Google 로그인</Button>

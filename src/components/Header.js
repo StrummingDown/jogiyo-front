@@ -7,15 +7,14 @@ const Header = styled.header`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #FEB3C8;
+  background-color: #feb3c8;
   height: 70px;
   padding: 0 10px;
-  i{font-size: 30px;
-     cursor: pointer;
-     color: #f2f2f2;
-      
-  };
-
+  i {
+    font-size: 30px;
+    cursor: pointer;
+    color: #f2f2f2;
+  }
 `;
 
 const Div = styled.div`
@@ -68,13 +67,12 @@ const Menu = styled.ul`
 }
 
 }
-    `
+    `;
 
-const Lists = styled.li`
+const Lists = styled(Link)`
   padding: 10px;
   font-size: 20px;
-
-`
+`;
 
 const GoHome = styled(Link)`
   height: 100%;
@@ -82,24 +80,26 @@ const GoHome = styled(Link)`
 
 // eslint-disable-next-line
 export default () => {
-    const [isOpen, setIsOpen] = useState(false)
-    
-    const openMenuHandler = () => {
-        setIsOpen(!isOpen)
-    }
+  const [isOpen, setIsOpen] = useState(false);
+
+  const openMenuHandler = () => {
+    setIsOpen(!isOpen);
+  };
   return (
     <Div>
       <Header>
-        <GoHome to="/">
-          <Logo src="https://play-lh.googleusercontent.com/Lwf7wsenpoSoKi49pPDGm01H8UY-NvznoM99DzzrmCDn1QIS-klLRqIw4GeFV6lbz1g" />
+        <GoHome to='/'>
+          <Logo src='https://play-lh.googleusercontent.com/Lwf7wsenpoSoKi49pPDGm01H8UY-NvznoM99DzzrmCDn1QIS-klLRqIw4GeFV6lbz1g' />
         </GoHome>
-        <i className="fas fa-bars" onClick = {openMenuHandler}></i>
+        <i className='fas fa-bars' onClick={openMenuHandler}></i>
       </Header>
-    {isOpen?       <Menu isOpen={isOpen}>
-        <Lists>공지사항</Lists>
-        <Lists>서비스소개</Lists>
-        <Lists>로그인</Lists>
-      </Menu> : null}
+      {isOpen ? (
+        <Menu isOpen={isOpen}>
+          <Lists to='/'>공지사항</Lists>
+          <Lists to='/'>서비스소개</Lists>
+          <Lists to='/login'>로그인</Lists>
+        </Menu>
+      ) : null}
     </Div>
   );
 };
