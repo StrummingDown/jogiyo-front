@@ -3,16 +3,19 @@ import Home from "../pages/Home";
 import Login from "../pages/Login";
 import Header from "./Header";
 import Globalstyle from "./Globalstyle";
+import { useState } from "react";
 
-const Routers = () => (
-  <BrowserRouter>
-    <Globalstyle />
-    <Header />
-    <Routes>
-      <Route path='/' element={<Home />} />
-      <Route path='/login' element={<Login />} />
-    </Routes>
-  </BrowserRouter>
-);
+const Routers = () => {
+  return (
+    <BrowserRouter>
+      <Globalstyle />
+      <Header />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/login" element={<Login />} />
+      </Routes>
+    </BrowserRouter>
+  );
+};
 
 export default Routers;
