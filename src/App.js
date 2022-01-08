@@ -1,5 +1,9 @@
+import Routers from "./components/Router";
+
 function App() {
-  return <div className="App">app</div>;
+  return (
+    <Routers />
+  )
 }
 
 export default App;
