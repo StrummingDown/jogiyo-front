@@ -78,6 +78,8 @@ const Login = () => {
     const {data:{id,nickname}} = await axios.post(`http://localhost:4000/kakao`,{
       code
     })
+    console.log('id확인',id)
+    navigate('/home')
     if(id){
        navigate('/home')
     } 
@@ -85,10 +87,11 @@ const Login = () => {
     
   };
 
+  
   useEffect(() => {
-    kakao();
     console.log('useEffect작종')
-  }, []);
+    kakao();
+  },);
 
 
 
