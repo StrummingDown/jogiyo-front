@@ -8,19 +8,12 @@ const Home = () => {
 
     if (code) {
       const login = localStorage.getItem("login");
-      if (login === "kakao") {
-        const { data } = await axios.post(`http://localhost:4000/kakao`, {
-          code,
-        });
-      } else if (login === "git") {
-        const { data } = await axios.post(`http://localhost:4000/github`, {
-          code,
-        });
-      } else if (login === "google") {
-        const { data } = await axios.post("http://localhost:4000/google", {
-          code,
-        });
-      }
+      const {
+        data: { token },
+      } = await axios.post(`http://localhost:4000/${login}`, {
+        code,
+      });
+      console.log(token);
     }
   };
   useEffect(() => {
