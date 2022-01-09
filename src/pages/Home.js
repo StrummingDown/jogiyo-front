@@ -2,19 +2,22 @@ import axios from "axios";
 import React, { useEffect } from "react";
 
 const Home = () => {
-  const kakao = async () => {
+  const getToken = async () => {
     const url = new URL(window.location.href);
     const code = url.searchParams.get("code");
+
     if (code) {
+      const login = localStorage.getItem("login");
       const {
-        data: { accessToken },
-      } = await axios.post(`http://localhost:4000/kakao`, {
+        data: { token },
+      } = await axios.post(`http://localhost:4000/${login}`, {
         code,
       });
+      console.log(token);
     }
   };
   useEffect(() => {
-    kakao();
+    getToken();
   }, []);
   return <div>Home</div>;
 };

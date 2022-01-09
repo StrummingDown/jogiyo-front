@@ -73,11 +73,21 @@ const Login = () => {
       </LogoForm>
       <ButtonForm>
         <Container>
-          <Button href='https://kauth.kakao.com/oauth/authorize?client_id=b72151a6abcb9e45c5b06010dc2a3f52&redirect_uri=http://localhost:3000&response_type=code'>
+          <Button
+            href='https://kauth.kakao.com/oauth/authorize?client_id=b72151a6abcb9e45c5b06010dc2a3f52&redirect_uri=http://localhost:3000&response_type=code'
+            onClick={() => localStorage.setItem("login", "kakao")}>
             카카오 로그인
           </Button>
-          <Button>Google 로그인</Button>
-          <Button>Github 로그인</Button>
+          <Button
+            href='https://accounts.google.com/o/oauth2/v2/auth?client_id=874017862069-ibnrpsv2sjrb3uuvdi5ijja6cloi9255.apps.googleusercontent.com&redirect_uri=http://localhost:3000&response_type=code&scope=https://www.googleapis.com/auth/userinfo.email'
+            onClick={() => localStorage.setItem("login", "google")}>
+            Google 로그인
+          </Button>
+          <Button
+            href='https://github.com/login/oauth/authorize?client_id=46fe43a8dc9c1ac97714'
+            onClick={() => localStorage.setItem("login", "github")}>
+            Github 로그인
+          </Button>
         </Container>
       </ButtonForm>
     </div>
