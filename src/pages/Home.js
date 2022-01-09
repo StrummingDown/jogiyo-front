@@ -10,7 +10,7 @@ const Home = () => {
       const login = localStorage.getItem("login");
       const {
         data: { token },
-      } = await axios.post(`http://localhost:4000/${login}`, {
+      } = await axios.post(`http://localhost:4000/oauth/${login}`, {
         code,
       });
       console.log(token);
