@@ -1,105 +1,89 @@
-import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import styled from "styled-components";
+import logo from "../img/logojogiyo.png";
+
+const Container = styled.div`
+  width: 100%;
+  position: fixed;
+  box-shadow: 0 4px 4px -4px #ccb1ef;
+`;
 
 const Header = styled.header`
-  width: 100%;
   display: flex;
+  top: 0;
+  left: 0;
   justify-content: space-between;
   align-items: center;
-  background-color: #feb3c8;
+  background-color: white;
   height: 70px;
-  padding: 0 10px;
   i {
     font-size: 30px;
     cursor: pointer;
-    color: #f2f2f2;
+    color: black;
   }
-`;
-
-const Div = styled.div`
-  display: flex;
-  justify-content: center;
+  margin: 0 auto;
   width: 100%;
-  position: fixed;
-  left: 0;
-  flex-direction: column;
-  top: 0;
+  max-width: 1200px;
+  @media screen and (max-width: 1200px) {
+    padding: 0 10px;
+  }
 `;
 
 const Logo = styled.img`
-  width: 90px;
-  height: 100%;
+  justify-content: center;
+  padding : 100px
+  width: 100px;
+  height: 45%;
 `;
 
-const Menu = styled.ul`
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    background-color: #FEB3C8;
-    align-items: center;
-    width: 100%;
-	-webkit-animation: slide-in-top 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
-	        animation: slide-in-top 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
-    @-webkit-keyframes slide-in-top {
-  0% {
-    -webkit-transform: translateY(-1000px);
-            transform: translateY(-1000px);
-    opacity: 0;
-  }
-  100% {
-    -webkit-transform: translateY(0);
-            transform: translateY(0);
-    opacity: 1;
-  }
-}
-@keyframes slide-in-top {
-  0% {
-    -webkit-transform: translateY(-1000px);
-            transform: translateY(-1000px);
-    opacity: 0;
-  }
-  100% {
-    -webkit-transform: translateY(0);
-            transform: translateY(0);
-    opacity: 1;
-  }
-}
+const IconDiv = styled.div`
+  /* animation-duration: 2s;
+  animation-name: slidein; */
+  display: flex;
+  justify-content: space-between;
+  width: 200px;
+  /* @keyframes slidein {
+    from {
+      margin-left: 100%;
+      width: 300%;
+    }
 
-}
-    `;
-
-const Lists = styled(Link)`
-  padding: 10px;
-  font-size: 20px;
+    to {
+      margin-left: 0%;
+      width: 100%;
+    }
+  } */
 `;
 
-const GoHome = styled(Link)`
-  height: 100%;
+const IconLink = styled(Link)`
+  i {
+    color: ${(props) => (props.isActive ? "#d5c4ff" : "black")};
+  }
 `;
 
 // eslint-disable-next-line
 export default () => {
-  const [isOpen, setIsOpen] = useState(false);
+  const { pathname } = useLocation();
 
-  const openMenuHandler = () => {
-    setIsOpen(!isOpen);
-  };
   return (
-    <Div>
+    <Container>
       <Header>
-        <GoHome to='/'>
-          <Logo src='https://play-lh.googleusercontent.com/Lwf7wsenpoSoKi49pPDGm01H8UY-NvznoM99DzzrmCDn1QIS-klLRqIw4GeFV6lbz1g' />
-        </GoHome>
-        <i className='fas fa-bars' onClick={openMenuHandler}></i>
+        <Logo src={logo} />
+        <IconDiv>
+          <IconLink to="/friends" isActive={pathname === "/friends"}>
+            <i className="fas fa-search-plus" />
+          </IconLink>
+          <IconLink to="/like" isActive={pathname === "/like"}>
+            <i className="fas fa-hand-point-up" />
+          </IconLink>
+          <IconLink to="/chatroom" isActive={pathname === "/chatroom"}>
+            <i className="fas fa-comment" />
+          </IconLink>
+          <IconLink to="/mypage" isActive={pathname === "/mypage"}>
+            <i className="fas fa-user" />
+          </IconLink>
+        </IconDiv>
       </Header>
-      {isOpen ? (
-        <Menu isOpen={isOpen}>
-          <Lists to='/'>공지사항</Lists>
-          <Lists to='/'>서비스소개</Lists>
-          <Lists to='/login'>로그인</Lists>
-        </Menu>
-      ) : null}
-    </Div>
+    </Container>
   );
 };
