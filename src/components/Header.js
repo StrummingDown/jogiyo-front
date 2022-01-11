@@ -88,16 +88,16 @@ export default () => {
   return (
     <Div>
       <Header>
-        <GoHome to='/'>
-          <Logo src='https://play-lh.googleusercontent.com/Lwf7wsenpoSoKi49pPDGm01H8UY-NvznoM99DzzrmCDn1QIS-klLRqIw4GeFV6lbz1g' />
+        <GoHome to="/">
+          <Logo src="https://play-lh.googleusercontent.com/Lwf7wsenpoSoKi49pPDGm01H8UY-NvznoM99DzzrmCDn1QIS-klLRqIw4GeFV6lbz1g" />
         </GoHome>
-        <i className='fas fa-bars' onClick={openMenuHandler}></i>
+        <i className="fas fa-bars" onClick={openMenuHandler}></i>
       </Header>
       {isOpen ? (
         <Menu isOpen={isOpen}>
-          <Lists to='/'>공지사항</Lists>
-          <Lists to='/'>서비스소개</Lists>
-          <Lists to='/login'>로그인</Lists>
+          <Lists to="/">공지사항</Lists>
+          <Lists to="/">서비스소개</Lists>
+          <Lists to="/login">로그인</Lists>
         </Menu>
       ) : null}
     </Div>
