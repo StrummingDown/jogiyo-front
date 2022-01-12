@@ -12,7 +12,7 @@ const Container = styled.div`
   align-items: center;
 `;
 
-const Chat = () => {
+const Chatroom = () => {
   return (
     <Container>
       <Message />
@@ -21,4 +21,4 @@ const Chat = () => {
   );
 };
 
-export default Chat;
+export default Chatroom;
