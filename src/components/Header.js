@@ -33,7 +33,6 @@ const Header = styled.header`
 
 const Logo = styled.img`
   justify-content: center;
-  padding : 100px
   width: 100px;
   height: 45%;
 `;

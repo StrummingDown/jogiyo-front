@@ -54,9 +54,6 @@ const Button = styled.a`
 const Login = () => {
   return (
     <div>
-      <LogoForm>
-        <Logo src="https://play-lh.googleusercontent.com/Lwf7wsenpoSoKi49pPDGm01H8UY-NvznoM99DzzrmCDn1QIS-klLRqIw4GeFV6lbz1g"></Logo>
-      </LogoForm>
       <ButtonForm>
         <Container>
           <Button
