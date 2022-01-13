@@ -1,7 +1,6 @@
 import axios from "axios";
 import React, { useEffect } from "react";
 import styled from "styled-components";
-import { ScrollSection } from "../components/ScrollSection";
 
 const Core = () => {
   return (
@@ -14,8 +13,7 @@ const Core = () => {
         alignItems: "center",
         justifyContent: "center",
         flexDirection: "column",
-      }}
-    >
+      }}>
       <div
         style={{
           display: "flex",
@@ -24,22 +22,20 @@ const Core = () => {
           textAlign: "center",
           justifyContent: "center",
           border: "1px solid blue",
-        }}
-      >
+        }}>
         <div
           style={{
             display: "flex",
             flex: 1,
             alignItems: "center",
             justifyContent: "center",
-          }}
-        >
+          }}>
           <div style={{ display: "flex", flex: 1 }}>
             <h1>This is core 1</h1>
           </div>
 
           <div style={{ display: "flex", flex: 1 }}>
-            <img src="https://picsum.photos/400" />
+            <img src='https://picsum.photos/400' />
           </div>
         </div>
       </div>

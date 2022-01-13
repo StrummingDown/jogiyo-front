@@ -6,6 +6,7 @@ const Container = styled.div`
   width: 100%;
   position: fixed;
   box-shadow: 0 4px 4px -4px #ccb1ef;
+  background-color: white;
 `;
 
 const Header = styled.header`
@@ -14,7 +15,7 @@ const Header = styled.header`
   left: 0;
   justify-content: space-between;
   align-items: center;
-  background-color: white;
+
   height: 70px;
   i {
     font-size: 30px;
@@ -31,7 +32,6 @@ const Header = styled.header`
 
 const Logo = styled.img`
   justify-content: center;
-  padding : 100px
   width: 100px;
   height: 45%;
 `;
@@ -70,17 +70,17 @@ export default () => {
       <Header>
         <Logo src={logo} />
         <IconDiv>
-          <IconLink to="/friends" isActive={pathname === "/friends"}>
-            <i className="fas fa-search-plus" />
+          <IconLink to='/friends' isActive={pathname === "/friends"}>
+            <i className='fas fa-search-plus' />
           </IconLink>
-          <IconLink to="/like" isActive={pathname === "/like"}>
-            <i className="fas fa-hand-point-up" />
+          <IconLink to='/like' isActive={pathname === "/like"}>
+            <i className='fas fa-hand-point-up' />
           </IconLink>
-          <IconLink to="/chatroom" isActive={pathname === "/chatroom"}>
-            <i className="fas fa-comment" />
+          <IconLink to='/chatroom' isActive={pathname === "/chatroom"}>
+            <i className='fas fa-comment' />
           </IconLink>
-          <IconLink to="/mypage" isActive={pathname === "/mypage"}>
-            <i className="fas fa-user" />
+          <IconLink to='/mypage' isActive={pathname === "/mypage"}>
+            <i className='fas fa-user' />
           </IconLink>
         </IconDiv>
       </Header>
