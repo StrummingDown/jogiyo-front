@@ -15,7 +15,6 @@ const Header = styled.header`
   left: 0;
   justify-content: space-between;
   align-items: center;
-
   height: 70px;
   i {
     font-size: 30px;
