@@ -1,23 +1,54 @@
 import React from "react";
 import styled from "styled-components";
 import Message from "../components/Message";
-const Container = styled.div`
-  margin-top: 100px;
+import { Link } from "react-router-dom";
 
-  width: 100%;
-  height: 200px;
+const Div = styled.div`
   display: flex;
-
+  padding-top: 70px;
+  justify-content: center;
+`;
+const Alink = styled(Link)`
+  all: unset;
+  cursor: pointer;
+`;
+const Container = styled.div`
+  height: 600px;
+  display: flex;
   flex-direction: column;
-  align-items: center;
+  overflow-y: scroll;
+  -ms-overflow-style: none;
+  &::-webkit-scrollbar {
+    display: none;
+  }
 `;
 
 const Chatroom = () => {
   return (
-    <Container>
-      <Message />
-      <Message />
-    </Container>
+    <>
+      <Div>
+        <Container>
+          <Alink to="123">
+            <Message />
+          </Alink>
+          <Alink to="123">
+            <Message />
+          </Alink>
+          <Alink to="123">
+            <Message />
+          </Alink>
+          <Alink to="123">
+            <Message />
+          </Alink>
+          <Alink to="123">
+            <Message />
+          </Alink>
+          <Alink to="123">
+            <Message />
+          </Alink>
+        </Container>
+      </Div>
+    </>
   );
 };
 

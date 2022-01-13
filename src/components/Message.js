@@ -3,10 +3,13 @@ import styled from "styled-components";
 
 const Container = styled.div`
   margin: 20px 0px;
-  width: 100%;
-  height: 200px;
+
+  height: 80px;
   display: flex;
   justify-content: center;
+  @media screen and (max-width: 400px) {
+    width: 450px;
+  } ;
 `;
 
 const Profile = styled.img`
@@ -16,11 +19,10 @@ const Profile = styled.img`
   height: 100%;
 `;
 const Div = styled.div`
-  margin-left: 10px;
+  padding-left: 10px;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  min-width: 300px;
 `;
 const Upper = styled.div`
   display: flex;

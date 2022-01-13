@@ -4,6 +4,7 @@ import Login from "../pages/Login";
 import Header from "./Header";
 import Globalstyle from "./Globalstyle";
 import Chatroom from "../pages/Chatroom";
+import Chatting from "./Chatting";
 
 const Routers = () => (
   <BrowserRouter>
@@ -12,7 +13,8 @@ const Routers = () => (
     <Routes>
       <Route path="/" element={<Home />} />
       <Route path="/login" element={<Login />} />
-      <Route path="/chat" element={<Chatroom />} />
+      <Route path="/chatroom" element={<Chatroom />} />
+      <Route path="/chatroom/:id" element={<Chatting />} />
     </Routes>
   </BrowserRouter>
 );
