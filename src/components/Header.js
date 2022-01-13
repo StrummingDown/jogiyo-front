@@ -7,6 +7,7 @@ const Container = styled.div`
   width: 100%;
   position: fixed;
   box-shadow: 0 4px 4px -4px #ccb1ef;
+  background-color: white;
 `;
 
 const Header = styled.header`
@@ -15,7 +16,7 @@ const Header = styled.header`
   left: 0;
   justify-content: space-between;
   align-items: center;
-  background-color: white;
+
   height: 70px;
   i {
     font-size: 30px;
