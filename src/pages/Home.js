@@ -58,7 +58,6 @@ const Home = () => {
       } = await axios.post(`http://localhost:4000/oauth/${login}`, {
         code,
       });
-      console.log(token);
     }
   };
   useEffect(() => {
